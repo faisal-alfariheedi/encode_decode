@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         for (element in ain) {
             var ch = element
             if (ch.isLowerCase()) {
-                if (ch != ' ') {
+                if (alphapet.contains(ch)) {
                     for (j in alphapet.indices) {
                         if (ch == alphapet[j]) {
                             co = j
@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
                     aout = aout + ch.toString()
                 }
             } else {
-                if (ch != ' ') {
+                if (clphapet.contains(ch)) {
                     for (j in clphapet.indices) {
                         if (ch == clphapet[j]) {
                             co = j
@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
                             break
                         }
                     }
-                    aout = aout + alphapet[co].toString()
+                    aout = aout + clphapet[co].toString()
                 } else {
                     aout = aout + ch.toString()
                 }
@@ -91,6 +91,7 @@ class MainActivity : AppCompatActivity() {
         indec.setText("")
         aout=""
         rv.adapter?.notifyDataSetChanged()
+        rv.scrollToPosition(lis.size-1)
 
     }
 
@@ -99,7 +100,7 @@ class MainActivity : AppCompatActivity() {
         for (element in ain) {
             var ch = element
             if(ch.isLowerCase()){
-                if (ch != ' ') {
+                if (alphapet.contains(ch)) {
                     for (j in alphapet.indices) {
                         if (ch == alphapet[j]) {
                             co = j
@@ -115,7 +116,7 @@ class MainActivity : AppCompatActivity() {
                     aout = aout + ch.toString()
                 }
             }else{
-                if (ch != ' ') {
+                if (clphapet.contains(ch)) {
                     for (j in clphapet.indices) {
                         if (ch == clphapet[j]) {
                             co = j
@@ -126,7 +127,7 @@ class MainActivity : AppCompatActivity() {
                             break
                         }
                     }
-                    aout = aout + alphapet[co].toString()
+                    aout = aout + clphapet[co].toString()
                 } else {
                     aout = aout + ch.toString()
                 }
@@ -137,5 +138,6 @@ class MainActivity : AppCompatActivity() {
         indec.setText("")
         aout=""
         rv.adapter?.notifyDataSetChanged()
+        rv.scrollToPosition(lis.size-1)
     }
 }
